@@ -1,0 +1,101 @@
+.s-1 {
+    padding: 50px 0;
+
+    .container {
+        @extend %container;
+        // max-width: $container-size-lg;
+        // width: 100%;
+        // margin: 0 auto;
+
+        & > h2 {
+            font-size: $title-size-02;
+            margin-bottom: 20px;
+            color: $title-color-02;
+        }
+
+        & > .wrapper {
+            @include flex-props(space-between, flex-start);
+
+            & > img {
+                width: 30%;
+            }
+
+            & > p {
+                width: 60%;
+                font-size: $paragraph-size-01;
+                line-height: 24px;
+                letter-spacing: 2px;
+                color: $paragraph-color-01;
+            }
+        }
+
+        // @media (max-width: 1200px) {
+        //     width: 90%;
+        // }
+
+        @media (max-width: 924px) {
+            & > .wrapper {
+                flex-direction: column;
+                justify-content: center;
+
+                & > img {
+                    width: 100%;
+                    margin-bottom: 30px;
+                }
+
+                & > p {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+
+.s-2 {
+    background-color: lightcyan;
+    padding: 30px 0;
+    .container {
+        @include flex-props();
+        @extend %container;
+        flex-wrap: wrap;
+
+        // max-width: $container-size-lg;
+        // width: 100%;
+        // margin: 0 auto;
+
+
+        & > .box {
+            @include square(300px);
+
+            &:first-child {
+                background-color: rebeccapurple;
+            }
+
+            &:nth-child(2) {
+                background-color: red;
+            }
+
+            &:last-child {
+                background-color: green;
+            }
+
+            // @media (max-width: 1000px) {
+            //     @include square(500px);
+            // }
+        }
+
+        // @media (max-width: 1200px) {
+        //     width: 90%;
+        // }
+
+        @media (max-width: 1000px) {
+            flex-direction: column;
+
+            & > .box {
+                @include square(500px);
+            }
+        }
+
+    }
+}

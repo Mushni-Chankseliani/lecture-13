@@ -1,0 +1,10 @@
+@import './reset';
+@import './variables/_variables';
+@import './mixins';
+@import './placeholder';
+@import './style';
+@import './media';
+
+body {
+    font-family: $main-font;
+}
